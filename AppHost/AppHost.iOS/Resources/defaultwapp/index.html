@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Apphost WAPP</title>
+		<meta charset='utf-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<link rel='stylesheet' href='css/style.css' />
+	</head>
+
+	<body>
+		<h1>Gaiaplaces</h1>
+        <h2>DEBUG</h2>
+		<p>Den här wappen har som syfte att testa olika funktioner i mobil-apphosten.</p>
+        <h4>Metadata</h4>
+        <ul id="metadata">
+        </ul>
+
+        <h4>Geopos</h4>
+        <h5>Status</h5>
+        <ul id="geoPosStatus">
+        </ul>
+        <button id="geoPosCurrentButton">Get pos</button>
+        <div id="geoPosCurrent"></div>
+
+        <button id="geoPosListenerButton">Listen for geo pos</button>
+        <div id="geoPosListenStatus"></div>
+        <div id="geoPos"></div>
+
+        <!--
+		<h4>Test uppladdning av fil till app</h4>
+		<form action=''>
+			<label for='download-url'>URL till bild</label>
+			<br/>
+			<input id='image-url-input' type='text' name='download-url' />
+		</form>
+		<button id='image-button'>Ladda hem</button>
+		
+		<div class='upload-preview'>[presentera uppladdad bild här]</div>
+		<hr/>
+		
+		<h4>Test presentation av bild från deployment</h4>
+		<img class='full-width-image' src='content/cat.jpg' />
+		
+		<hr/>
+		<h4>Testa geopositionering</h4>
+		
+		<button id='get-geo-position'>Hämta geoposition</button>
+		<div id='geo-results'>
+		</div>
+		
+		<hr/>
+		
+		<h4>Test av supersimpel javascript - $.get lokal json-fil</h4>
+		
+		<button id='click'>Klicka på mig</button>
+		<div id='results'>
+		</div>
+		
+		<button id='click1'>Klicka på mig också</button>
+		<div id='results1'>
+		</div>
+		
+		<p>Demo calling C# from JavaScript</p>
+		<button type='button' onClick='AppHost.ShowToast()'>Call C#</button>
+		
+
+        <h4>AppHost gets</h4>
+
+        <p><button id="getplatform">Get current platform</button></p>
+        <p><button id="getasseturl">Get Asset URL</button>
+        <p><button id="getgeoavailable">Get Geolocation available</button></p>
+        <p><button id="getgeolocation">Get Geolocation</button></p>
+        <p><button id="getgeolocations">Get Geolocations</button></p>
+        Other ideas that could potentially be useful: 
+        <p><button id="getbattery">Get Battery Status</button></p>
+        <p><button id="vibration">Trigger Vibration</button></p>
+        <p><button id="takephoto">Take photo!</button></p>
+
+
+        <h4>Test av WebGL</h4>
+        <div id="webgl" style="margin: 0px; padding: 0px;">
+
+        </div>
+        -->
+		<script src='js/jquery-1.12.3.min.js'></script>
+        <!--
+        <script src='js/three.js'></script>
+        <script src='js/stats.min.js'></script>
+        <script src='js/webgltest.js'></script>
+        -->
+		<script src='js/app.js'></script>
+	</body>
+
+</html>

@@ -1,0 +1,208 @@
+@import "_variables.less";
+
+@mainBlue: #54acd2;
+@mainBlueRGB-50: rgba(84,172,210,0.5);
+
+main {
+    display:block;
+    
+    main-menu {
+        background: @mainMenuBackgroundColor;        
+        width: @mainMenuWidth;                
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        
+        .logotype-container {
+            height: 60px;
+        }
+        
+        ul {
+            li {
+                a {
+                    color: #fff;
+                    text-decoration:none;
+                    font-size: 22px;
+                    text-align: center;
+                    padding: 20px 0;
+                    display:block;
+                    width: @mainMenuWidth;
+                    
+                    &.router-link-active {
+                        background: @mainBlueColor;
+                    }                                                    
+                }
+            }
+        }
+    } 
+    
+    .object-view-container {        
+        background: @previewBackgroundColor;
+        width: @routerOutletWidth;
+        position:absolute;
+        top:0;
+        left: @mainMenuWidth;
+        bottom: 0;
+        color:#fff;
+        
+        .object-view {
+            opacity:0;
+            -moz-transition: opacity .3s ease;
+            -o-transition: opacity .3s ease;
+            -webkit-transition: opacity .3s ease;
+            transition: opacity .3s ease;
+            
+            &.ready {
+                opacity:1;
+            }
+        }
+        
+        .loading-view {
+            
+        }
+        
+        .header {
+            .search {
+                position:relative;
+                input {
+                    border: 0;
+                    background: none;
+                    height: 60px;
+                    padding: 0 20px;
+                    font-size: 16px;
+                    width: 100%;
+                    color:#fff;
+                    
+                }
+                .icon {                        
+                        font-family: 'Linearicons-Free';
+                        position:absolute;
+                        top: 50%;
+                        left: 15px;
+                        transform: translateY(-50%);
+                    }
+            }
+            .title {
+                height: 50px;                                                
+                background: @mainBlue;
+                padding: 0 20px;                
+                .text {
+                    height:50px;
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+            }
+        }       
+        
+        .preview {
+            .actions {
+                background: @mainBlueRGB-50;                
+                ul {
+                    li {
+                        padding: 10px 20px;
+                        cursor:pointer;
+                        &:after {
+                            position:absolute;
+                            right:15px;
+                            font-family: 'Linearicons-Free';
+                            content: "";
+                            height: 10px;
+                            width:10px;                            
+                        }
+                    }
+                }
+            }
+            .content{
+                .header {
+                    font-size: 10px;
+                    padding: 20px 20px;
+                }
+                .inner {
+                    padding: 10px 20px 30px 20px;             
+                    font-size: 16px;
+                    line-height:20px;            
+                }
+                
+            }
+            .list {
+                .header {
+                    background: @previewHeaderBackgroundColor;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    padding: 5px 20px;
+                }
+                
+                ul {
+                    li {
+                        padding: 10px 20px; 
+                        border-bottom: 1px solid #444;
+                        &:last-child {
+                            border: none;
+                        }
+                        &:after {
+                            position:absolute;
+                            right:15px;
+                            font-family: 'Linearicons-Free';
+                            content: "";
+                            height: 10px;
+                            width:10px;                            
+                        }
+                    }
+                }
+            }
+        }  
+    }
+    
+    .object-edit-container {
+        background: @previewBackgroundColor;
+        width: @routerOutletWidth;
+        position:absolute;
+        top:0;
+        left: @mainMenuWidth;
+        bottom: 0;
+        color:#fff;
+        
+        transition: left .3s ease;
+        
+        &.show-edit {
+            left: @mainMenuWidth + @routerOutletWidth;
+        }
+        
+        .header {
+            margin-top: 60px;
+            
+            .title {
+                height: 50px;                                                
+                background: @mainBlue;
+                padding: 0 20px;        
+                cursor:pointer;
+                        
+                .text {                    
+                    position: relative;                                        
+                    font-size: 20px;
+                    font-weight: 500;
+                    text-align: right;
+                    top:50%;
+                    transform: translateY(-50%);
+                    
+                    .icon {
+                        content: "";
+                        font-family: 'Linearicons-Free';
+                    }
+                }
+            }
+        }
+        .content {
+            position:absolute;
+            top:110px;
+            bottom:0;
+            left:0;
+            right:0;
+            width: @routerOutletWidth;
+            background: #fff;
+        }
+    }
+}

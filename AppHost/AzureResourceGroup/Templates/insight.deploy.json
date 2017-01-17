@@ -1,0 +1,34 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environment": {
+      "type": "string",
+      "allowedValues": [
+        "DEV",
+        "QA",
+        "PROD"
+      ]
+    }
+  },
+  "variables": {
+    "environment": "[replace(toLower(parameters('environment')), 'prod', '')]",
+    "applicationInsightsName": "[concat('gaiaplacesnodexamatinlog', variables('environment'))]"
+  },
+  "resources": [
+    {      
+      "name": "[variables('applicationInsightsName')]",
+      "apiVersion": "2014-04-01",
+      "type": "Microsoft.Insights/components",
+      "location": "[resourceGroup().location]",
+      "properties": { }
+    }
+  ],
+  "outputs": {
+    "InstrumentationKey": {
+      "value": "[reference(resourceId('Microsoft.Insights/components', variables('applicationInsightsName')), '2014-04-01').InstrumentationKey]",
+      "type": "string"
+    }
+  }
+
+}
