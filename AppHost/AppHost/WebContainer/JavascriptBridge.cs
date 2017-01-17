@@ -1,5 +1,5 @@
 ﻿using Acr.DeviceInfo;
-using Android.Content.PM;
+//using Android.Content.PM;
 using AppHost.Utils;
 using Newtonsoft.Json;
 using Plugin.Geolocator;
