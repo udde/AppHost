@@ -5,6 +5,10 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
+
 namespace AppHost.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -23,6 +27,10 @@ namespace AppHost.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            MobileCenter.Start("50814aa0-9a5e-450f-8788-deb678883583",
+                    typeof(Analytics), typeof(Crashes));
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

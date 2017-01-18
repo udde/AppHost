@@ -1,5 +1,5 @@
 ﻿using Acr.DeviceInfo;
-//using Android.Content.PM;
+//using Android.Content.PM; //tog bort för att göra mobile center glad
 using AppHost.Utils;
 using Newtonsoft.Json;
 using Plugin.Geolocator;
